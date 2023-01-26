@@ -126,19 +126,14 @@ console.log(createArray(myArr2))
 
 
 //4
-let myString='hello world'
-function deleteElements(string,element1,element2)    {
-    const result=string.split('')
-    for (let y =0;y<result.length;y++)
-    {
-        if (result[y]===element1||result[y]===element2)
-        {
-            result[y]='';
-        }
-    }
-    return  result.join('')
+let myString='hello world';
+let element=['l','d'];
 
+
+function delEl(arr,el){
+    const result=arr.split('')
+    arr= result.filter(item => !el.includes(item))
+    return arr.join('')
 }
 
-console.log(deleteElements(myString,'l','d')  )
-
+console.log(delEl(myString,element))
